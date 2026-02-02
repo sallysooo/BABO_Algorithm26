@@ -12,7 +12,7 @@ def solution(maps):
     dist = [[-1]*m for _ in range(n)]
     
     # 4) BFS
-    def dfs(start):
+    def bfs(start):
         q = deque([start])
         dist[start[0]][start[1]] = 1
         
@@ -38,7 +38,7 @@ def solution(maps):
         # dist에는 거리가 저장됨
         return dist 
     
-    dfs([0, 0])
+    bfs([0, 0])
     
     # 목적지까지의 거리 반환, 도달 못했을 경우 -1 반환
     return dist[n-1][m-1]
